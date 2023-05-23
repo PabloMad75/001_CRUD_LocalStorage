@@ -17,7 +17,7 @@
     <title>CRUD - LocalStorage</title>
 </head>
 
-<body>
+<body onload="loadData()">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
         <article class="header__container">
             <section class="header__img">
@@ -97,7 +97,7 @@
                     <hr>
                 </form>
                 <div class="table-responsive mt-4">
-                    <table class="table align-middle" id="tabla_usuarios">
+                    <table class="table align-middle table-hover" id="tabla_usuarios">
                         <thead>
                             <tr class="table-primary text-uppercase">
                                 <th>Nombre</th>
@@ -109,8 +109,8 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody class="table-group-divider" id="tabla_cuerpo">
-
+                        <tbody class="table-group-divider hover" id="tablebody">
+                   
                         </tbody>
                     </table>
                 </div>
