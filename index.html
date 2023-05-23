@@ -33,10 +33,10 @@
             <h1>Registro de Usuarios</h1>
             </div>
             <div class="container">
-                <form class="row g-3" id="form__register">
+                <form class="row g-3" id="form_register">
                     <div class="col-md-4">
                         <label for="nombre" class="form-label">Nombre:</label>
-                        <input type="text" class="form-control" id="nombre" required>
+                        <input type="text" class="form-control" id="nombre">
                         <!-- <div class="invalid-feedback">
                             Debes ingresar el nombre!
                         </div> -->
@@ -49,25 +49,19 @@
                         </div>
                     </div> -->
                     <div class="col-md-8">
-                        <label for="direccion" class="form-label">Dirección:</label>
-                        <input type="text" class="form-control" id="direccion" required>
-                        <!-- <div class="invalid-feedback">
-                            Ingresa Dirección del usuario.
-                        </div> -->
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <label for="mail" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="mail" required>
-                        <!-- pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" 
-                        <div class="invalid-feedback">
-                            Debes ingresar correo electrónico válido!
-                        </div> -->
-                    </div>
+                        <label for="direccionInput" class="form-label">Dirección:</label>
+                        <input type="text" class="form-control" id="direccionInput">
+                      </div>
+                      
+                      <div class="col-md-4">
+                        <label for="mailInput" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="mailInput" required>
+                      </div>
+                      
 
                     <div class="col-md-4">
-                        <label for="perfil_usuario" class="form-label">Perfil de Usuario:</label>
-                        <select class="form-select" id="perfil_usuario" required>
+                        <label for="perfilusuario" class="form-label">Perfil de Usuario:</label>
+                        <select class="form-select" id="perfilusuario" required>
                             <option value="">Seleccione Perfil</option>
                             <option>Usuario</option>
                             <option>Auditor</option>
@@ -79,8 +73,8 @@
                         </div> -->
                     </div>
                     <div class="col-md-4">
-                        <label for="estado_usuario" class="form-label">Estado de Usuario:</label>
-                        <select class="form-select" id="estado_usuario" required>
+                        <label for="estadousuario" class="form-label">Estado de Usuario:</label>
+                        <select class="form-select" id="estadousuario" required>
                             <option value="">Seleccione Estado</option>
                             <option>Activo</option>
                             <option>Inactivo</option>
@@ -96,9 +90,9 @@
                     <hr>
                   </div> -->
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button class="btn btn-primary" type="submit">Grabar</button>
-                        <button class="btn btn-secondary" type="submit">Actualizar</button>
-                        <button class="btn btn-danger" type="reset">Cancelar</button>
+                        <button class="btn btn-primary" id="btn_grabar"  type="button">Grabar</button>
+                        <button class="btn btn-secondary" id="btn_actualizar" type="button">Actualizar</button>
+                        <button class="btn btn-danger" id="btn_cancelar" type="reset">Cancelar</button>
                     </div>
                     <hr>
                 </form>
@@ -116,12 +110,12 @@
                             </tr>
                         </thead>
                         <tbody class="table-group-divider" id="tabla_cuerpo">
-        
+
                         </tbody>
                     </table>
                 </div>
         </section>
-        
+
 
     </main>
     <footer>
@@ -134,7 +128,7 @@
         </div>
 
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
