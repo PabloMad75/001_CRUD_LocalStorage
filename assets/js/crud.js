@@ -4,10 +4,14 @@ const mailInput = document.getElementById("mailInput");
 const typeUserInput = document.getElementById("perfilusuario");
 const estateUserInput = document.getElementById("estadousuario");
 const tableBodyInput = document.getElementById("tablebody");
-
 const btnSave = document.getElementById("btn_grabar");
 const btnCancel = document.getElementById("btn_cancelar");
 const btnUpdate = document.getElementById("btn_actualizar");
+
+const regularesExp = {
+  mail: /^[a-z0-9]+(?:[-\._]?[a-z0-9]+)*@(?:[a-z0-9]+(?:-?[a-z0-9]+)*\.)+[a-z]+$/i,
+  letras: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(\s[a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/
+};
 
 // Una vez cargado el contenido del DOM, si existe visualizo la info del localstorage
 document.addEventListener("DOMContentLoaded", (e) => {
