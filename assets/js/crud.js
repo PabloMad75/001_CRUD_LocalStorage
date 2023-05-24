@@ -18,8 +18,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   loadData();
 });
 
-btnSave.addEventListener("submit", (e) => {
-  e.preventDefault();
+btnSave.addEventListener("click", () => {
   if (
     nameInput.value.trim() === "" ||
     mailInput.value.trim() === "" ||
@@ -57,7 +56,7 @@ const success = () =>{
       Swal.fire({
         position: "top-end",
         icon: "success",
-        title: "Proceso realizado con éxito!",
+        title: "ProcesoLos datos fueron grabados exitosamente!",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -94,7 +93,6 @@ const deleteRecord = (id) => {
 
       //Reseteo el formulario, cargo los botones iniciales del formulario y la funcion viewData actualizar el html
       formRegister.reset();
-      success();
       loadData();
     }
   });
