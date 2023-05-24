@@ -38,8 +38,6 @@ btnSave.addEventListener("click", () => {
     formRegister.reset();
     loadData();
     success();
-
-
   }
 });
 
@@ -193,55 +191,3 @@ const editRecord = (id) => {
     }
   }
 };
-
-/*
-
-const updateRecord =()=> {
-  if (
-    nameInput.value.trim() === "" ||
-    mailInput.value.trim() === "" ||
-    typeUserInput.value.trim() === "" ||
-    estateUserInput.value.trim() === ""
-  ) {
-    console.log("El campo está vacío");
-  } else {
-    names.name = nameInput.value;
-    names.mail = mailInput.value;
-    names.typeUser = typeUserInput.value;
-    names.estateUser = estateUserInput.value;
-    localStorage.setItem("names", JSON.stringify(names));
-    inactiveBtnUpdate();
-  }
-  loadData();
-  // Remover el evento click después de su ejecución
-  btnUpdate.removeEventListener("click", updateRecord);
-  // btnEdit.setAttribute("display", "block");
-  formRegister.reset();
-  inactiveBtnUpdate();
-}
-
-
-// función con parametro para editar elemento del localStorage
-const editRecord = (id) => {
-	const names = getInfoLocalStorage();
-  activeBtnUpdate();
-
-	// Buscar el objeto name, mediante la id (id)
-	const nameToUpdate = names.find((name) => name.id === id);
-
-	if (nameToUpdate) {
-		document.getElementById("nombre").value = nameToUpdate.name;
-		document.getElementById("mailInput").value = nameToUpdate.mail;
-		document.getElementById("perfilusuario").value = nameToUpdate.typeUser;
-		document.getElementById("estadousuario").value = nameToUpdate.estateUser;
-    console.log("datos de name: "+nameToUpdate);
-
-		//Remover el evento click anterior, si existe, para evitar acumulación de manejadores
-		btnUpdate.removeEventListener("click", updateRecord);
-
-		// Agregar el nuevo evento click al botón btnUpdate
-		btnUpdate.addEventListener("click", updateRecord);
-	}
-};
-
-*/
