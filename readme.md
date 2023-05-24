@@ -3,6 +3,7 @@
 ### Utilizando las siguientes tecnologías:
 *   Html.
 *   Bootstrap.
+*   Css.
 *   JavaScript.
 *   LocalStorage.
 *   SweetAlert2.

@@ -36,11 +36,11 @@
                 <form class="row g-3" id="form_register">
                     <div class="col-md-6">
                         <label for="nombre" class="form-label">Nombre:</label>
-                        <input type="text" class="form-control" id="nombre">
+                        <input type="text" class="form-control" id="nombre" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$" required>
                     </div>
                     <div class="col-md-6">
                         <label for="mailInput" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="mailInput" required>
+                        <input type="email" class="form-control" id="mailInput" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" required>
                     </div>
                     <div class="col-md-6">
                         <label for="perfilusuario" class="form-label">Perfil de Usuario:</label>
@@ -61,7 +61,7 @@
                         </select>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button class="btn btn-primary active" id="btn_grabar" type="button"><i
+                        <button class="btn btn-primary active" id="btn_grabar" type="submit"><i
                                 class="fa-solid fa-floppy-disk"></i> Grabar</button>
                         <button class="btn btn-primary inactive" id="btn_actualizar" type="button"><i
                                 class="fa-solid fa-arrows-rotate"></i> Actualizar</button>
@@ -72,6 +72,7 @@
                 </form>
                 <div class="table-responsive mt-4">
                     <table class="table table-bordered text-center align-middle table-hover border-success" id="tabla_usuarios">
+                        <h4>Tabla de Usuarios Registrados</h4>
                         <thead>
                             <tr class="table-info text-uppercase">
                                 <th>Nombre</th>
@@ -95,6 +96,7 @@
                 <a href="#"><small><strong>By PabloMad Design.</strong></small></a>
             </p>
         </div>
+
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>

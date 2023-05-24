@@ -65,3 +65,21 @@ h1{
     border: none;
 
 }
+
+/*
+https://greensock.com/ libreria a conocer
+ejemplo para validar inputs con Css
+
+input   {
+    outline: none;
+}
+input:invalid   {
+    border: 2px solid red;
+    animation: 0.2s valid 3;
+}
+
+@keyframes valid{
+    to {transform: translateX(0);}
+    from {transform: translateX(10px);}
+}
+*/
