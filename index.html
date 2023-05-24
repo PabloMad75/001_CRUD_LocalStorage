@@ -17,7 +17,7 @@
     <title>CRUD - LocalStorage</title>
 </head>
 
-<body onload="loadData()">
+<body>
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
         <article class="header__container">
             <section class="header__img">
@@ -34,7 +34,7 @@
             </div>
             <div class="container">
                 <form class="row g-3" id="form_register">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <label for="nombre" class="form-label">Nombre:</label>
                         <input type="text" class="form-control" id="nombre">
                         <!-- <div class="invalid-feedback">
@@ -48,18 +48,17 @@
                             Debes ingresar el nombre!
                         </div>
                     </div> -->
-                    <div class="col-md-8">
+                    <!-- <div class="col-md-8">
                         <label for="direccionInput" class="form-label">Dirección:</label>
                         <input type="text" class="form-control" id="direccionInput">
-                      </div>
-                      
-                      <div class="col-md-4">
+                    </div> -->
+
+                    <div class="col-md-6">
                         <label for="mailInput" class="form-label">Email:</label>
                         <input type="email" class="form-control" id="mailInput" required>
-                      </div>
-                      
+                    </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <label for="perfilusuario" class="form-label">Perfil de Usuario:</label>
                         <select class="form-select" id="perfilusuario" required>
                             <option value="">Seleccione Perfil</option>
@@ -72,7 +71,7 @@
                             Debes seleccionar el perfil del usuario.
                         </div> -->
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <label for="estadousuario" class="form-label">Estado de Usuario:</label>
                         <select class="form-select" id="estadousuario" required>
                             <option value="">Seleccione Estado</option>
@@ -90,19 +89,21 @@
                     <hr>
                   </div> -->
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button class="btn btn-primary" id="btn_grabar"  type="button">Grabar</button>
-                        <button class="btn btn-secondary" id="btn_actualizar" type="button">Actualizar</button>
-                        <button class="btn btn-danger" id="btn_cancelar" type="reset">Cancelar</button>
+                        <button class="btn btn-primary active" id="btn_grabar" type="button"><i
+                                class="fa-solid fa-floppy-disk"></i> Grabar</button>
+                        <button class="btn btn-primary inactive" id="btn_actualizar" type="button"><i
+                                class="fa-solid fa-arrows-rotate"></i> Actualizar</button>
+                        <button class="btn btn-danger active" id="btn_cancelar" type="reset"><i
+                                class="fa-solid fa-right-from-bracket"></i> Cancelar</button>
                     </div>
                     <hr>
                 </form>
                 <div class="table-responsive mt-4">
-                    <table class="table align-middle table-hover" id="tabla_usuarios">
+                    <table class="table table-bordered text-center align-middle table-hover border-success" id="tabla_usuarios">
                         <thead>
-                            <tr class="table-primary text-uppercase">
+                            <tr class="table-info text-uppercase">
                                 <th>Nombre</th>
                                 <!-- <th>Apellido</th> -->
-                                <th>Dirección</th>
                                 <th>E-Mail</th>
                                 <th>Perfil</th>
                                 <th>Estado</th>
@@ -110,12 +111,10 @@
                             </tr>
                         </thead>
                         <tbody class="table-group-divider hover" id="tablebody">
-                   
                         </tbody>
                     </table>
                 </div>
         </section>
-
 
     </main>
     <footer>
