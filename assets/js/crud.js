@@ -56,7 +56,7 @@ const success = () =>{
       Swal.fire({
         position: "top-end",
         icon: "success",
-        title: "ProcesoLos datos fueron grabados exitosamente!",
+        title: "Los datos fueron grabados exitosamente!",
         showConfirmButton: false,
         timer: 1500,
       });
