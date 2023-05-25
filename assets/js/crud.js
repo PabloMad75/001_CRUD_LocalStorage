@@ -10,7 +10,7 @@ const btnUpdate = document.getElementById("btn_actualizar");
 
 const regularesExp = {
   mail: /^[a-z0-9]+(?:[-\._]?[a-z0-9]+)*@(?:[a-z0-9]+(?:-?[a-z0-9]+)*\.)+[a-z]+$/i,
-  letras: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(\s[a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/
+  letras: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(\s[a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/,
 };
 
 // Una vez cargado el contenido del DOM, si existe visualizo la info del localstorage
@@ -52,25 +52,25 @@ const getInfoLocalStorage = () => {
 };
 
 //Mensaje Sweet Alert Exito
-const success = () =>{
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Los datos fueron grabados exitosamente!",
-        showConfirmButton: false,
-        timer: 1500,
-      });
+const success = () => {
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Los datos fueron grabados exitosamente!",
+    showConfirmButton: false,
+    timer: 1500,
+  });
 };
 
 //Mensaje Sweet Alert Error
-const warning= () => {
-    Swal.fire({
-      position: "top-end",
-      icon: "error",
-      title: `Debes completar la información requerida!`,
-      showConfirmButton: false,
-      timer: 1500,
-    });
+const warning = () => {
+  Swal.fire({
+    position: "top-end",
+    icon: "error",
+    title: `Debes completar la información requerida!`,
+    showConfirmButton: false,
+    timer: 1500,
+  });
 };
 
 // función con parametro para borrar elementos del local Storage
@@ -98,6 +98,7 @@ const deleteRecord = (id) => {
   });
 };
 
+// Muestra de información del LocalStorage
 const loadData = () => {
   names = getInfoLocalStorage();
   tableBodyInput.innerHTML = "";
@@ -118,6 +119,7 @@ const loadData = () => {
   });
 };
 
+// Ocultar y mostrar botones
 const activeBtnUpdate = () => {
   btnSave.classList.remove("active");
   btnSave.classList.add("inactive");
@@ -142,9 +144,9 @@ const editRecord = (id) => {
   if (nameToUpdate) {
     activeBtnUpdate();
     nombre.value = nameToUpdate.name;
-		mailInput.value = nameToUpdate.mail;
-		perfilusuario.value = nameToUpdate.typeUser;
-		estadousuario.value = nameToUpdate.estateUser;
+    mailInput.value = nameToUpdate.mail;
+    perfilusuario.value = nameToUpdate.typeUser;
+    estadousuario.value = nameToUpdate.estateUser;
 
     // Deshabilitar todos los botones btnEdit
     const btnEditList = document.getElementsByClassName("edit-btn");
@@ -164,34 +166,41 @@ const editRecord = (id) => {
         mailInput.value.trim() === "" ||
         typeUserInput.value.trim() === "" ||
         estateUserInput.value.trim() === ""
-      ){
+      ) {
+        inactiveBtnUpdate();
         warning();
-        return;
+        // return;
       } else {
         nameToUpdate.name = nameInput.value;
         nameToUpdate.mail = mailInput.value;
         nameToUpdate.typeUser = typeUserInput.value;
         nameToUpdate.estateUser = estateUserInput.value;
-        console.log("campo nombre valor: " + nameToUpdate.name);
-        console.log("campo nombre valor: " + nameToUpdate.mail);
-        console.log("campo nombre valor: " + nameToUpdate.typeUser);
-        console.log("campo nombre valor: " + nameToUpdate.estateUser);
         localStorage.setItem("names", JSON.stringify(names));
-        inactiveBtnUpdate();
         success();
+        formRegister.reset();
       }
       loadData();
       // Remover el evento click después de su ejecución
       btnUpdate.removeEventListener("click", updateName);
-
-      // Mostrar nuevamente los botones btnEdit
-      const btnEditList = document.getElementsByClassName("edit-btn");
-      for (let i = 0; i < btnEditList.length; i++) {
-        btnEditList[i].disabled = false;
-      }
-
+      showBtn();
       formRegister.reset();
       loadData();
+      inactiveBtnUpdate();
     }
   }
 };
+// Mostrar nuevamente los botones btnEdit
+const showBtn = () => {
+  const btnEditList = document.getElementsByClassName("edit-btn");
+  for (let i = 0; i < btnEditList.length; i++) {
+    btnEditList[i].disabled = false;
+  }
+};
+
+btnCancel.addEventListener("click", () => {
+  console.log("se apreto el cancel");
+  formRegister.reset();
+  // loadData();
+  inactiveBtnUpdate();
+  showBtn();
+});
