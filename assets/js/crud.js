@@ -93,6 +93,7 @@ const deleteRecord = (id) => {
 
       //Reseteo el formulario, cargo los botones iniciales del formulario y la funcion viewData actualizar el html
       formRegister.reset();
+      inactiveBtnUpdate();
       loadData();
     }
   });
