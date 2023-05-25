@@ -76,7 +76,7 @@ const warning = () => {
 // función con parametro para borrar elementos del local Storage
 const deleteRecord = (id) => {
   console.log("funcion delete");
-  const names = ([] = getInfoLocalStorage());
+  const names = getInfoLocalStorage();
   names.forEach((name) => {
     if (name.id === id) {
       //Elimino del arreglo con splice y findIndex el elemento con el indice entregado por parametro, mostrando la consola
