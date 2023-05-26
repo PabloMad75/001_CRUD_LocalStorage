@@ -1,5 +1,4 @@
 (:es:)
-# CRUD de usuarios.
 
 # Ejemplo de un pequeño y básico CRUD de usuarios
 
