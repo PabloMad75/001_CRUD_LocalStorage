@@ -24,4 +24,4 @@ En resumen, este proyecto muestra cómo combinar HTML, Bootstrap, CSS y JavaScri
 *   SweetAlert2.
 
 ---
-:sparkles: con ❤ por :copyright:[PabloMad](https://github.com/PabloMad75) 😊
+:sparkles: por :copyright:[PabloMad](https://github.com/PabloMad75) 😊
