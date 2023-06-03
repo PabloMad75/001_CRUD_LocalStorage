@@ -21,6 +21,9 @@ En resumen, este proyecto muestra cómo combinar HTML, Bootstrap, CSS y JavaScri
 *   JavaScript.
 *   LocalStorage.
 *   SweetAlert2.
+---
+## Imagen
+![CRUD_LocalStorage](https://github.com/PabloMad75/001_CRUD_LocalStorage/assets/126835515/0382104e-9b5a-4e03-8d6f-1ef193cc9a8e)
 
 ---
 :sparkles: por :copyright:[PabloMad](https://github.com/PabloMad75) 😊
